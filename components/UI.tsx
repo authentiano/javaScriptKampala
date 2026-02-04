@@ -66,7 +66,7 @@ export const Section: React.FC<{ children: React.ReactNode; className?: string; 
   </section>
 );
 
-export const Badge: React.FC<{ children: React.ReactNode; color?: 'yellow' | 'green' | 'gray' | 'blue' }> = ({ children, color = 'gray' }) => {
+export const Badge: React.FC<{ children: React.ReactNode; color?: 'yellow' | 'green' | 'gray' | 'blue'; className?: string }> = ({ children, color = 'gray', className = '' }) => {
   // Flat badges: Solid background or strong border
   const colors = {
     yellow: "bg-js-yellow text-black border-js-yellow",
@@ -75,7 +75,7 @@ export const Badge: React.FC<{ children: React.ReactNode; color?: 'yellow' | 'gr
     gray: "bg-gray-800 text-gray-300 border-gray-800"
   };
   return (
-    <span className={`inline-flex items-center px-3 py-1 border text-[10px] font-bold uppercase tracking-widest ${colors[color]}`}>
+    <span className={`inline-flex items-center px-3 py-1 border text-[10px] font-bold uppercase tracking-widest ${colors[color]} ${className}`}>
       {children}
     </span>
   );
